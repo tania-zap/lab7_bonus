@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамічна таблиця</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Динамічна таблиця</h2>
+    <button id="refresh-data">Оновити дані</button>
+    <table>
+        <thead>
+            <tr>
+                <th data-sort="name">Ім'я</th>
+                <th data-sort="affiliation">Фракція</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Дані завантажуються сюди -->
+        </tbody>
+    </table>
+
+    <script src="dynamic-table.js"></script>
+</body>
+</html>
