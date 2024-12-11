@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     // Функція для завантаження даних
     function loadData(sortBy = null) {
+        $("#loading").show(); // Показуємо індикатор завантаження
         $.ajax({
             url: apiUrl,
             method: "GET",
@@ -15,6 +16,10 @@ $(document).ready(function () {
             },
             error: function (xhr, status, error) {
                 console.error("Помилка завантаження даних:", error);
+                alert("Не вдалося завантажити дані. Спробуйте ще раз пізніше.");
+            },
+            complete: function () {
+                $("#loading").hide(); // Ховаємо індикатор завантаження
             }
         });
     }
@@ -42,6 +47,11 @@ $(document).ready(function () {
     // Обробники для сортування
     $("th[data-sort]").click(function () {
         const sortBy = $(this).data("sort");
+
+        // Активна індикація сортування
+        $("th").removeClass("active");
+        $(this).addClass("active");
+
         loadData(sortBy);
     });
 
