@@ -20,13 +20,22 @@
             background-color: #f2f2f2;
             cursor: pointer;
         }
+        th.active {
+            background-color: #ccc; /* Активна індикація сортування */
+        }
         button {
             margin: 10px 0;
+        }
+        #loading {
+            display: none;
+            margin: 10px 0;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <h2>Динамічна таблиця</h2>
+    <div id="loading">Завантаження даних...</div>
     <button id="refresh-data">Оновити дані</button>
     <table>
         <thead>
