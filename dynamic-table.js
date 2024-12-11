@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const apiUrl = "https://cors-anywhere.herokuapp.com/http://lab.vntu.org/api-server/lab7.php";
+    const apiUrl = "https://api.allorigins.win/raw?url=http://lab.vntu.org/api-server/lab7.php";
 
 
     // Функція для завантаження даних
